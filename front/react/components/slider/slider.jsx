@@ -98,7 +98,7 @@ class Slider extends Component {
             <span>{slideIndex + 1} / {this.state.numberOfSlides}</span>
           </header>
           <div className={styles.gl_slider_item_image}>
-            <img src={`/glass/assets/img/${slide.img.location}`} />
+            <img src={`/assets/img/${slide.img.location}`} />
           </div>
           <div className={styles.gl_slider_item_description}>
             <p>{slide.description}</p>
