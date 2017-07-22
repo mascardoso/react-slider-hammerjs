@@ -1,0 +1,116 @@
+$slideWidths: (
+  base: 86,
+  baseper: 86%,
+  medium: 60,
+  mediumper: 60%,
+);
+
+.gl_slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.gl_slider_container {
+  display: flex;
+  flex-direction: row;
+  cursor: grab;
+  left: 50%;
+  position: relative;
+  margin-left: calc(-#{map-get($slideWidths, baseper)} / 2);
+
+  &:before {
+    display: none;
+    content: '#{map-get($slideWidths, base)}';
+  }
+
+  @media screen and (min-width: 599px) {
+    margin-left: calc(-#{map-get($slideWidths, mediumper)} / 2);
+
+    &:before {
+      content: '#{map-get($slideWidths, medium)}';
+    }
+  }
+}
+
+.gl_slider_container_sliding {
+  cursor: grabbing;
+}
+
+.gl_slider_container_animating {
+  transition: transform 400ms cubic-bezier( .5, 0, .5, 1 );
+}
+
+.gl_slider_item {
+  width: map-get($slideWidths, baseper);
+  background-color: white;
+  box-shadow: 6px 6px 10px 0 rgba(0, 0, 0, .16);
+  display: flex;
+  flex-direction: column;
+  height: 460px;
+  transform: scaleY(.95);
+  transition: transform .3s ease-in-out;
+  transform-origin: top right;
+  margin: 0 10px 50px 0;
+
+  @media screen and (min-width: 599px) {
+    width: map-get($slideWidths, mediumper);
+    height: 488px;
+  }
+
+  &.gl_slider_item_selected {
+    transform: scaleY(1);
+  }
+
+  .gl_slider_item_header {
+    width: 100%;
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 0;
+
+    .gl_slider_item_heading {
+      text-transform: uppercase;
+    }
+  }
+
+  .gl_slider_item_image {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      vertical-align: middle;
+    }
+  }
+
+  .gl_slider_item_description {
+    color: black;
+    padding: 15px;
+    font-size: 16px;
+    line-height: 20px;
+    height: 115px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
