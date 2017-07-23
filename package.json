@@ -7,7 +7,7 @@
   "scripts": {
     "start:front": "webpack-dev-server --inline --hot --host ::",
     "build:front": "NODE_ENV=production webpack -p",
-    "deploy": "gh-pages -d build"
+    "deploy": "npm run build:front && gh-pages -d build"
   },
   "homepage": "https://mascardoso.github.io/react-slider-hammerjs",
   "author": "Marco Cardoso",
