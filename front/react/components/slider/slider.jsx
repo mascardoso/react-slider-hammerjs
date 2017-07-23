@@ -90,17 +90,17 @@ class Slider extends Component {
       return (
         <div
           key={slideIndex}
-          className={`${styles.gl_slider_item} ${this.state.activeSlide === slideIndex ? styles.gl_slider_item_selected : ''}`}
+          className={`${styles.slider_item} ${this.state.activeSlide === slideIndex ? styles.slider_item_selected : ''}`}
           ref={(element) => { this.slide = element }}
         >
-          <header className={styles.gl_slider_item_header}>
-            <span className={styles.gl_slider_item_heading}>{slide.title}</span>
+          <header className={styles.slider_item_header}>
+            <span className={styles.slider_item_heading}>{slide.title}</span>
             <span>{slideIndex + 1} / {this.state.numberOfSlides}</span>
           </header>
-          <div className={styles.gl_slider_item_image}>
+          <div className={styles.slider_item_image}>
             <img src={`/assets/img/${slide.img.location}`} />
           </div>
-          <div className={styles.gl_slider_item_description}>
+          <div className={styles.slider_item_description}>
             <p>{slide.description}</p>
           </div>
         </div>
@@ -129,7 +129,7 @@ class Slider extends Component {
 
     return (
       <div
-        className={styles.gl_slider}
+        className={styles.slider}
         ref={(element) => { this.slider = element }}
       >
         <Hammer
@@ -137,7 +137,7 @@ class Slider extends Component {
           onPan={this.swipe}
         >
           <div
-            className={`${styles.gl_slider_container} ${this.state.isEndingSliding ? styles.gl_slider_container_animating : ''} ${this.state.isSliding ? styles.gl_slider_container_sliding : ''}`}
+            className={`${styles.slider_container} ${this.state.isEndingSliding ? styles.slider_container_animating : ''} ${this.state.isSliding ? styles.slider_container_sliding : ''}`}
             ref={(element) => { this.sliderContainer = element }}
           >
             {this.generateSlides()}

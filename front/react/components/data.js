@@ -1,32 +1,32 @@
 export const slider = {
   slides: [
     {
-      title: 'Bust Measurement',
+      title: 'Welcome',
       img: {
         location: '01.jpg'
       },
-      description: 'To get the right shirt size run a flexible tape measure across the fullest area of your bust, holding the tape measure horizontally.'
+      description: 'Mr. Clarke runs in Lucas slingshot near lots of hapless guards. Police station donuts crawl out of a portal in a tree over a bike.'
     },
     {
-      title: 'Waist Measurement',
+      title: 'to a great series',
       img: {
         location: '02.jpg'
       },
-      description: 'Measure around the narrowest part of the waist, keeping the tape horizontally.'
+      description: 'Will questions the sanity of Dustin even though Tommy secretly leaves Eggos in the woods around a bike. Comic books cast a fireball spell on an Eggo.'
     },
     {
-      title: 'Hip Measurement',
+      title: 'of unexplainable',
       img: {
         location: '03.jpg'
       },
-      description: 'Stand with your feet together and measure around the fullest point of the hip, keeping the tape measure horizontally.'
+      description: 'Jonathans camera stands up for the little guy despite the fact that Deputy Powell investigates Nilla Wafers nearby.'
     },
     {
-      title: 'Inseam Measurement',
+      title: 'stranger things',
       img: {
         location: '04.jpg'
       },
-      description: 'Measure from your crotch to the bottom of your leg. Be aware that the inseam measurements are based on a regular inseam.'
+      description: 'Jonathan makes lights flicker while across Hawkins Middle School, middle school students make lights flicker in a crackling telephone.'
     }
   ]
 }

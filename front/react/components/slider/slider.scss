@@ -4,6 +4,8 @@ html,
 body {
   height: 100%;
   font-size: 14px;
+  background-color: #f8f8f8;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 body {
@@ -28,7 +30,6 @@ p {
   margin: 0;
 }
 
-
 /**SLIDER**/
 
 $slideWidths: (
@@ -38,12 +39,13 @@ $slideWidths: (
   mediumper: 60%,
 );
 
-.gl_slider {
+.slider {
+  margin-top: 30px;
   width: 100%;
   overflow: hidden;
 }
 
-.gl_slider_container {
+.slider_container {
   display: flex;
   flex-direction: row;
   cursor: -webkit-grab;
@@ -67,17 +69,17 @@ $slideWidths: (
   }
 }
 
-.gl_slider_container_sliding {
+.slider_container_sliding {
   cursor: -webkit-grabbing;
   cursor: -moz-grabbing;
   cursor: grabbing;
 }
 
-.gl_slider_container_animating {
+.slider_container_animating {
   transition: transform 400ms cubic-bezier( .5, 0, .5, 1 );
 }
 
-.gl_slider_item {
+.slider_item {
   width: map-get($slideWidths, baseper);
   background-color: white;
   box-shadow: 6px 6px 10px 0 rgba(0, 0, 0, .16);
@@ -93,27 +95,28 @@ $slideWidths: (
     width: map-get($slideWidths, mediumper);
   }
 
-  &.gl_slider_item_selected {
+  &.slider_item_selected {
     transform: scaleY(1);
   }
 
-  .gl_slider_item_header {
+  .slider_item_header {
     width: 100%;
     padding: 10px;
-    background-color: blue;
+    background-color: black;
     color: white;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     border: 0;
+    font-size: 20px;
 
-    .gl_slider_item_heading {
+    .slider_item_heading {
       text-transform: uppercase;
     }
   }
 
-  .gl_slider_item_image {
+  .slider_item_image {
     width: 100%;
     overflow: hidden;
     position: relative;
@@ -135,8 +138,8 @@ $slideWidths: (
     }
   }
 
-  .gl_slider_item_description {
-    color: black;
+  .slider_item_description {
+    color: #383838;
     padding: 15px;
     font-size: 16px;
     line-height: 20px;
