@@ -9,3 +9,10 @@ Checkout this repo and install dependencies:
 ```
 
 Navigate to *localhost:8080*
+
+
+### For Production
+
+```
+> npm build:front
+```

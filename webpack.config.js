@@ -18,7 +18,7 @@ module.exports = {
     './react/index.js'
   ],
   output: {
-    path: path.resolve(__dirname, 'front-dist'),
+    path: path.resolve(__dirname, 'build'),
     publicPath: '/',
     filename: 'react/app.js'
   },

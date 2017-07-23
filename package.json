@@ -5,8 +5,11 @@
   "main": "index.js",
   "repository": "https://github.com/mascardoso/react-slider-hammerjs.git",
   "scripts": {
-    "start:front": "webpack-dev-server --inline --hot --host ::"
+    "start:front": "webpack-dev-server --inline --hot --host ::",
+    "build:front": "NODE_ENV=production webpack -p && cp index.html ./build",
+    "deploy": "gh-pages -d build"
   },
+  "homepage": "https://mascardoso.github.io/react-slider-hammerjs",
   "author": "Marco Cardoso",
   "license": "ISC",
   "devDependencies": {
@@ -42,7 +45,8 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "webpack": "^3.1.0",
-    "webpack-dev-server": "^2.5.1"
+    "webpack-dev-server": "^2.5.1",
+    "gh-pages": "^1.0.0"
   },
   "dependencies": {
     "lodash": "^3.10.1",
