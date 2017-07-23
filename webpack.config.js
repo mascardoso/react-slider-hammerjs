@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ImageminPlugin = require('imagemin-webpack-plugin').default
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const isProdEnv = process.env.NODE_ENV === 'production'
 
@@ -11,6 +12,16 @@ const extractStyles = new ExtractTextPlugin({
   allChunks: true,
   disable: !isProdEnv
 })
+
+const extraPlugins = []
+
+if (isProdEnv) {
+  extraPlugins.push(new HtmlWebpackPlugin({
+    title: 'React Slider with HammerJS',
+    template: './index.ejs',
+    inject: false
+  }))
+}
 
 module.exports = {
   context: path.resolve(__dirname, 'front'),
@@ -65,7 +76,8 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: 'assets', to: 'assets' }
     ]),
-    new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i })
+    new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
+    ...extraPlugins
   ],
   devServer: {
     historyApiFallback: true,
